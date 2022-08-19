@@ -57,10 +57,7 @@ function PostPage({ trendingResults, followResults, providers }) {
 
       <main className="bg-black min-h-screen flex max-w-[1500px] mx-auto">
         <Sidebar />
-        <Widgets
-          trendingResults={trendingResults}
-          followResults={followResults}
-        />
+
         <div className="flex-grow border-l border-r border-y border-gray-700 max-w-2xl sm:ml-[72px] xl:ml-[370px]">
           <div className="flex items-center px-1.5 py-2 border-b border-r border-gray-700 text-white font-semibold text-xl gap-x-4 sticky top-0 z-50 bg-black">
             <div
@@ -84,6 +81,10 @@ function PostPage({ trendingResults, followResults, providers }) {
             </div>
           )}
         </div>
+        <Widgets
+          trendingResults={trendingResults}
+          followResults={followResults}
+        />
         {isOpen && <Modal />}
       </main>
     </div>
