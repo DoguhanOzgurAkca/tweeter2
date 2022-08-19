@@ -1,0 +1,62 @@
+import {
+  CalendarIcon,
+  ChartBarIcon,
+  DotsHorizontalIcon,
+  EmojiHappyIcon,
+  PhotographIcon,
+} from "@heroicons/react/outline";
+import React from "react";
+import Moment from "react-moment";
+
+export const Comment = ({ id, comment }) => {
+  return (
+    <div className="p-3 flex cursor-pointer border-b border-gray-700">
+      <img
+        src={comment?.userImg}
+        alt=""
+        className="h-11 w-11 rounded-full mr-4"
+      />
+      <div className="flex flex-col space-y-2 w-full">
+        <div className="justify-between flex">
+          <div className="text-gray-500">
+            <div className="inline-block group">
+              <h4 className="font-bold text-white text-[15px] sm:text-base inline-block group-hover:underline">
+                {comment?.username}
+              </h4>
+              <span className="ml-1.5 text-sm sm:text-[15px]">
+                @{comment?.tag}{" "}
+              </span>
+            </div>{" "}
+            <span className="hover:underline text-sm sm:text-[15px]">
+              <Moment fromNow>{comment?.timestamp?.toDate()}</Moment>
+            </span>
+            <p className="text-white mt-0.5 max-w-lg overflow-scroll text-[15px] sm:text-base">
+              {comment?.comment}
+            </p>
+          </div>
+          <div className="icon group flex-shrink-0">
+            <DotsHorizontalIcon className="h-5 text-gray-500 group-hover:text-blue-600" />
+          </div>
+        </div>
+        <div className="flex justify-between w-10/12 text-gray-500">
+          <div className="icon group">
+            <PhotographIcon className=" h-5 group-hover:text-[#1d9bf0]" />
+          </div>
+          <div className="flex items-center space-x-1 group">
+            <div className="icon group-hover:bg-pink-600/10">
+              <ChartBarIcon className="h-5 group-hover:text-pink-600" />
+            </div>
+            <span className="group-hover:text-pink-600 text-sm"></span>
+          </div>
+          <div className="icon group">
+            <EmojiHappyIcon className="h-5 group-hover:text-[#1d9bf0]" />
+          </div>
+
+          <div className="icon group">
+            <CalendarIcon className="h-5 group-hover:text-[#1d9bf0]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
