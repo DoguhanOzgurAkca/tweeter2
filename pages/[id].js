@@ -46,6 +46,7 @@ function PostPage({ trendingResults, followResults, providers }) {
       ),
     [db, id]
   );
+
   return (
     <div className="">
       <Head>
@@ -90,7 +91,6 @@ function PostPage({ trendingResults, followResults, providers }) {
     </div>
   );
 }
-
 export default PostPage;
 
 export async function getServerSideProps(context) {

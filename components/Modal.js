@@ -29,8 +29,6 @@ function Modal() {
   const [comment, setComment] = useState("");
   const router = useRouter();
 
-  console.log(isOpen);
-
   useEffect(
     () =>
       onSnapshot(doc(db, "posts", postId), (snapshot) => {

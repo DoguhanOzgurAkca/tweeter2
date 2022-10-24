@@ -17,8 +17,6 @@ import { db, storage } from "../firebase";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import React, { useRef, useState } from "react";
 import { useSession } from "next-auth/react";
-// import data from "@emoji-mart/data";
-// import { Picker } from "emoji-mart";
 
 export const Input = () => {
   const { data: session } = useSession();
@@ -52,7 +50,6 @@ export const Input = () => {
     setLoading(false);
     setInput("");
     setSelectedImage(null);
-    // setShowEmojis(false)
   };
 
   const addImageToPost = (e) => {
